@@ -1,0 +1,32 @@
+Given an array of N integers, find the pair of integers in the array which have minimum XOR value. Report the minimum XOR value.
+
+Examples :
+Input
+0 4 3 9
+Output
+3 (0 XOR 3)
+Input
+0 8 7 10
+Output
+2 (8 XOR 10)
+
+Constraints:
+2 <= N <= 100 000
+0 <= A[i] <= 1 000 000 000
+
+
+*********CODE*********
+
+class Solution:
+    def findMinXor(self, A):
+        # write your method here
+        A.sort()
+        min=A[0]^A[1]
+        for i in range(1,len(A)-1):
+            if A[i]^A[i+1]<min:
+                min=A[i]^A[i+1]
+        return min
+        
+L = list(map(int,input().split()))
+s = Solution()
+print(s.findMinXor(L))
