@@ -1,0 +1,42 @@
+Write a program to take String if the length of String is odd print X pattern otherwise print INVALID.
+
+Input Format:
+Take a String as input from stdin.
+
+Output Format:
+print the desired Pattern or INVALID.
+
+Example Input:
+edyst
+
+Output:
+
+e   t
+ d s 
+  y  
+ d s 
+e   t
+
+
+*********CODE*********
+
+string = input()
+s = len(string)
+i = s-1
+e = s + 1
+if s % 2 == 0:
+    print("INVALID")
+else:
+    for l in range(1,e):
+        p = [""] * i
+        if l <= s / 2:
+            p[l - 1] = string[l - 1]
+            p[-l] = string[-l]
+            print(*p)
+        elif l == e / 2:
+            p[l - 1] = string[l - 1]
+            print(*p)
+        else:
+            p[s - l] = string[s - l]
+            p[l - e] = string[l - e]
+            print(*p)
