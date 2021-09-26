@@ -1,0 +1,49 @@
+Write a program to print the Right Arrow Pattern.
+
+Input Format:
+Take an input Integer which is from stdin.
+
+Output Format:
+print Right Arrow pattern
+
+Example Input:
+5
+
+Output:
+
+*****    
+  ****   
+    ***  
+      ** 
+        *
+      ** 
+    ***  
+  ****   
+*****    
+
+
+*********CODE*********
+
+n = int(input())
+N = n
+s = 2 * n - 1
+m = [2 * e for e in range(n)]
+l = [""] * s
+k = i = 0
+while n != 0:
+    l = [" " for g in range(m[i])]
+    i += 1
+    n -= 1
+    for j in range(n + 1):
+        l.append("*")
+    print(''.join(str(i) for i in l))
+n += 1
+i -= 1
+# print(i, n)
+while n < N:
+    i -= 1
+    n += 1
+    l = [" " for g in range(m[i])]
+    for j in range(n):
+        l.append("*")
+    print(''.join(str(i) for i in l))
