@@ -1,0 +1,51 @@
+A box contains a number of chocolates that can only be removed 1 at a time or 3 at a a time. How many ways can the box be emptied?
+
+The answer can be very large so return it modulo of 10^9+7
+
+For example, there are n = 7 chocolates initially. They can be removed nine ways as follows:
+
+(1,1,1,1,1,1,1)
+(1,1,1,1,3)
+(1,1,1,3,1)
+(1,1,3,1,1)
+(1,3,1,1,1)
+(3,1,1,1,1)
+(1,3,3)
+(3,1,3)
+(3,3,1)
+Input format: Single line represents the no of chocolates in the box.
+
+Output format: The number of ways of removing the chocolates modulo 10^9 + 7
+
+Constraints:
+
+1 <= n <= 10^9
+Sample Input 1 :
+
+1
+Sample Output 1 :
+
+1
+Explanation:: There is only one way to remove a chocolate, so
+
+ans = 1 % 1000000007 = 1
+Sample Input 2 :
+
+3
+Sample Output 2 :
+
+2
+Explanation: There are two ways to remove all the chocolates.
+
+remove all 3 at once,
+remove one after the other, so
+ans = 2 % 1000000007 = 2.
+
+
+*********CODE*********
+
+n = int(input())
+dp = [0,1,1,2]
+for i in range(4,n+1):
+    dp[0],dp[1],dp[2],dp[3] = dp[1],dp[2],dp[3], (dp[1]+dp[3])%(10**9+7)
+print(dp[3]%(10**9+7))
