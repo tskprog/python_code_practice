@@ -1,0 +1,54 @@
+Write a program to find the transpose of a given n*m matrix.
+
+Input Format:
+
+First line take an Integer from stdin  which is number of rows n.
+Second line take an Integer from stdin which is number of columns m.
+Third line take an Integers which are matrix elements
+Output Format:
+
+Transpose of a matrix
+
+Example Input:
+
+1   2   3
+4   5   6
+7   8   9
+
+
+Output:
+
+1   4   7
+2   5   8
+3   6   9
+
+
+*********CODE*********
+
+x = int(input())
+y = int(input())
+m= []
+M=[]
+# l=[]
+s=0
+d=y
+t = list(map(int, input().strip().split()))[:x * y]
+for r in range(x):
+    q=[]
+    for c in range(s,d):
+        q.append(t[c])
+    m.append(q)
+    d+=y
+    s+=y
+for R in range(y):
+    T=[]
+    for C in range(x):
+        T.append(m[C][R])
+    M.append(T)
+#print(*M)
+# for i in range(y):
+#     for j in range(x):
+#         l.append(M[i][j])
+for i in range(y):
+    print(' '.join(str(i) for i in M[i]))
+    
