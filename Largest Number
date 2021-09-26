@@ -1,0 +1,46 @@
+Given a list of non negative integers, arrange them such that they form the largest number.
+
+For example:
+
+Given [3, 30, 34, 5, 9], the largest formed number is 9534330.
+
+Note: The result may be very large, so you need to return a string instead of an integer.
+
+
+*********CODE*********
+
+class Solution:
+    def comparator(self,a, b):
+        h=""
+        for i in range(len(b)):
+            h+=b[i]
+        if(a+h>h+a):
+            return True
+        else:
+            return False
+    def place(self,l,d):
+        t=len(l)-1
+        while(t>=0 and self.comparator(d,l[t:len(l)+1])):
+            t=t-1
+        l.insert(t+1,d)
+        return l
+    def largestNumber(self, A):
+        # write your method here
+        
+        l = []
+        f = []
+        for i in range(len(A)):
+            l.append(str(A[i]))
+        if(l[0]+l[1]>l[1]+l[0]):
+            f.extend([l[0],l[1]])
+        else:
+            f.extend([l[1],l[0]])
+        for i in range(2,len(l)):
+            f=self.place(f,l[i])
+        s=""
+        for i in range(len(f)):
+            s=s+f[i]
+        return s
+        
+L = list(map(int,input().split()))
+print(largestNumber(L))
