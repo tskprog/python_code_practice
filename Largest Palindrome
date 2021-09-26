@@ -1,0 +1,55 @@
+Write a program to find the largest palindrome in the String Array
+
+Input Format:
+
+In First line take an Integer which is size of the array
+In Second line take a list of Strings
+Output Format:
+
+print the Largest palindrome String
+
+Example Input:
+4
+aba abab abaab abaaba
+
+Output:
+abaaba
+
+Note:
+
+If there are multiple largest palindromic strings with same length, print the lexicpraphically smallest one.
+
+
+*********CODE*********
+
+m = int(input())
+x = list(map(str, input().strip().split()))[:m]
+
+
+def isPalindrome(s):
+    rev = s[::-1]
+    if s == rev:
+        return True
+    else:
+        return False
+
+
+p = []
+# print(x)
+for i in x:
+    if isPalindrome(i):
+        p.append(i)
+    else:
+        continue
+# print(p)
+if len(p)<1:
+    print(-1)
+else:
+    ml = len(p[0])
+    mp = p[0]
+    for ele in p:
+        le = len(ele)
+        if ml < le:
+            mp = ele
+    print(mp)
+
