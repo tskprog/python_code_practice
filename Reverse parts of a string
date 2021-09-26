@@ -1,0 +1,60 @@
+Write a program to take input a line from stdin. You have to reverse every word of this line, except for the starting and ending line of the words. For example, for the following input:
+
+we love coding in this world
+the output is:
+
+we lveo cnidog in tihs wlrod
+every word has been reversed except it's first and last alphabet.
+Input format:
+
+first line contains the number of lines, n
+this is followed by n lines
+Output:
+
+print each line such that the words are reversed as per the criteria above
+Example Input:
+5
+hello all
+this is a good
+example
+to show you how to reverse
+a string
+ 
+Output:
+hlleo all 
+tihs is a good 
+elpmaxe 
+to sohw you how to rsrevee 
+a snirtg
+
+
+*********CODE*********
+
+n = int(input())
+inp = []
+m = []
+out=""
+
+def strev(txt):
+    s = len(txt)
+    p = s - 2
+    if s<3:
+        return txt
+    else:
+        ob = txt[0] + txt[p:0:-1] + txt[s - 1]
+        return ob
+    
+for i in range(n):
+    inp.append(input())
+for line in inp:
+    string = line
+    l = string.split()
+    for msg in l:
+        res = strev(msg)
+        m.append(res)
+    for i in range(len(m)):
+        out = out + str(m[i]) + " "
+    print(out)
+    m = []
+    out=""
+
