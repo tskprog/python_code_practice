@@ -1,0 +1,62 @@
+A ring is composed of n (even number) circles as shown in diagram. Put natural numbers 1, 2, . . . , n into each circle separately, and the sum of numbers in two adjacent circles should be a prime.
+
+Note: the number of first circle should always be 1.
+
+
+Input
+n (0 < n ≤ 16)
+
+Output
+The output format is shown as sample below. Each row represents a series of circle numbers in the ring beginning from 1 clockwisely and anticlockwisely. The order of numbers must satisfy the above requirements.
+
+You are to write a program that completes above process.
+
+Sample Input
+6
+Sample Output
+1 4 3 2 5 6
+1 6 5 2 3 4
+Sample Input
+8
+Sample Output
+1 2 3 8 5 6 7 4
+1 2 5 8 3 4 7 6
+1 4 7 6 5 8 3 2
+1 6 7 4 3 8 5 2
+
+
+*********CODE*********
+
+def prime(n):
+    if n == 2 or n == 3:
+        return 1
+    if n % 6 == 1 or n % 6 == 5:
+        for i in range(2, int(n ** 0.5 + 1)):
+            if n % i == 0:
+                return 0
+        return 1
+    return 0
+def ring(num):
+    arr = [x+1 for x in range(num)]
+    used = [0]*(num+1)
+    def form(j):
+        if j == num:
+            if prime(arr[0]+arr[-1]):
+                yield arr
+        else:
+            for k in range(2,num+1):
+                if not used[k]:
+                    tot = k + arr[j-1]
+                    if prime(tot):
+                        arr[j] = k
+                        used[k] = 1
+                        yield from form(j+1)
+                        used[k] = 0
+    used[1] = 1
+    yield from form(1)
+    
+    
+N = int(input())
+for ele in ring(N):
+    #print("".join(map(str,ele)))
+    print(*ele)
