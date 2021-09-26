@@ -1,0 +1,43 @@
+Write a program to take number n and print a Hollow Diamond shape .
+
+Input Format:
+
+Take an Integer from stdin.
+
+Output:
+
+Print the desired Pattern
+
+Example Input:
+5
+
+Output:
+
+    *
+   * *
+  *   *
+ *     *
+*       *
+ *     *
+  *   *
+   * *
+    *
+
+
+*********CODE*********
+
+n = int(input())
+N = n
+s = 2 * n - 1
+l = [" "] * s
+while n != 0:
+    l[n-1]=l[-n]="*"
+    n-=1
+    print(''.join(str(i) for i in l))
+    l = [" "] * s
+n+=1
+while n<N:
+    l[n]=l[-n-1]="*"
+    n+=1
+    print(''.join(str(i) for i in l))
+    l = [" "] * s
