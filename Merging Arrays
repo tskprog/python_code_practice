@@ -1,0 +1,35 @@
+Given 2 unsorted arrays, combine both of them such that the resultant array is sorted.
+
+Print the resultant array.
+
+Input Format
+First line contains size of first array
+Followed by elements of first array
+Following line contains size of 2nd array
+Followed by elements of the 2nd array
+Output Format
+Print the elements of the merged array on a single line
+
+Example Input:
+5 
+2 8 9 0 1
+3 
+3 2 1
+Output:
+
+0 1 1 2 2 3 8 9
+
+
+*********CODE*********
+
+m=int(input())
+x=list(map(int,input().strip().split()))[:m]
+n=int(input())
+y=list(map(int,input().strip().split()))[:n]
+z=[]
+for i in x:
+	z.append(i)
+for i in y:
+	z.append(i)
+z.sort()
+print(*z)
