@@ -1,0 +1,37 @@
+Write a program to take Array of Elements and print the sum of all numbers in Array .
+
+Input format:
+
+First line take an Integer input from stdin which is array length n.
+Second line take n Integers which is inputs of array .
+Output format:
+
+Print Integer which is sum of all elements in an array.
+
+Example Input:
+
+5
+1 2 3 4 5
+
+Output:
+
+15
+
+Example Input:
+
+6
+1 2 1 2 1 2
+
+Output:
+
+9
+
+
+*********CODE*********
+
+n=int(input())
+x=list(map(int,input().strip().split()))[:n]
+sum=0
+for i in x:
+    sum+=i
+print(sum)
