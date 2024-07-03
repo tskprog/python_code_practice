@@ -32,6 +32,8 @@ def sorted_squared(array):
             i += 1
     return squared
 
+# SC=O(n) TC = O(n) for sorting with above approach
+
 
 from userInput import *
 

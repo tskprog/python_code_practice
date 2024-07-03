@@ -24,6 +24,7 @@ def monotonic_array(array):
             return True
     return False
 
+
 def monotonic_array_method2(array):
     size = len(array)
     if size < 3:
@@ -44,6 +45,7 @@ def monotonic_array_method2(array):
                 return False
     return True
 
+# SC=O(1)no extra space TC = O(n) iterating only once
 
 from userInput import *
 
