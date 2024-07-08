@@ -36,14 +36,6 @@ for n!(total permutations) calls o(n) and for remaining (n-1)*n! calls o(1)
 n iterations were required to get 1 element;
 """
 
-def function_name_method2(args):
-    # definition
-    pass
-
-
-# SC=O(1)-->no auxiliary space TC = O(n))-->2n~n
-
-
 from userInput import *
 
 print(all_permutations(inputArray()))
