@@ -118,13 +118,15 @@ class SinglyLinkedList:
         print('->'.join([str(i) for i in nums]))
 
 
-sll = SinglyLinkedList()
-sll.addAtHead(9)
-sll.addAtTail(123)
-print(sll.addAtIndex(6,6))
-sll.addAtIndex(1,-34)
-print(sll.get(7))
-print(sll.get(1).value)
-print(sll.deleteAtIndex(4))
-print(sll.deleteAtIndex(0))
-print(sll.head.value,sll.tail.value,sll.size)
+
+# Below are used to Test functions
+# sll = SinglyLinkedList()
+# sll.addAtHead(9)
+# sll.addAtTail(123)
+# print(sll.addAtIndex(6,6))
+# sll.addAtIndex(1,-34)
+# print(sll.get(7))
+# print(sll.get(1).value)
+# print(sll.deleteAtIndex(4))
+# print(sll.deleteAtIndex(0))
+# print(sll.head.value,sll.tail.value,sll.size)
