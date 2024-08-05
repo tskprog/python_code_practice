@@ -7,8 +7,8 @@ Implement a Stack:
 2.with a Stack class using a Linked list
 One should be able to add to the stack and remove from the stack following the LIFO property.
 Test Cases
-Removal: push3  --> op = 3->None
-Insert: pop --> op = 3
+Insert: push3  --> op = 3->None
+Remove: pop --> op = 3
 """
 
 
