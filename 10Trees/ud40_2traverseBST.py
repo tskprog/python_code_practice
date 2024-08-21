@@ -30,7 +30,7 @@ class BinarySearchTreeTraverse:
     def __init__(self):
         self.root = None
 
-    def bread_first(self):
+    def breadth_first(self):
         array = []
         curr = self.root
         if not curr:
@@ -117,7 +117,7 @@ bst.insert(75)
 
 bstt = BinarySearchTreeTraverse()
 bstt.root = bst.root
-print('BFS is ',bstt.bread_first())
+print('BFS is ',bstt.breadth_first())
 print('DFS-inorder is ',bstt.dfs_in_order())
 print('DFS post-order is ',bstt.dfs_post_order())
 print('DFS pre-order is ',bstt.dfs_pre_order())
